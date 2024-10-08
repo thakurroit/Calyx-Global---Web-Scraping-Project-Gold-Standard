@@ -49,8 +49,8 @@ I assume this solution to be a part of a data pipeline where it can be incorpora
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
-   cd gold_standard_data_ingestion
+   git clone https://github.com/thakurroit/Calyx_Global_Gold_Standard_Web_Scraping.git
+   cd Calyx_Global_Gold_Standard_Web_Scraping
    ```
 2. Install the required packages:
    ```bash
