@@ -13,21 +13,17 @@ associated metadata.
 
 ### Summary and Approach:
 
-As part of my analysis, I analyzed Gold Standard registry website: list of projects and individual project page.
-By viewing source and inspecting elements I sought if there were any public apis available for Gold Standard registry website.
-There was public api for Gold Standard registry website which returned list of projects, additionally on inspecting individual page I found there were additional information about individual project's summary, issuance list and retirement list.  
+As part of my analysis, I examined the Gold Standard registry website, focusing on the list of projects and the individual project pages. By viewing the source and inspecting elements, I sought to determine if there were any public APIs available for the Gold Standard registry. I found that the website elements had a public API that returns a list of projects. Additionally, upon inspecting individual project pages, I discovered that there was extra information available regarding each project's summary, issuance list, and retirement list.
 
-Approach: 
-I am ingesting data from the public api which covers all the information about projects including description, credit summary, issuance list and retirement list.
+#### Approach
+I am ingesting data from the public API, which encompasses all information about the projects, including descriptions, credit summaries, issuance lists, and retirement lists.
 
-Alternatively I could have used web scraping framework like Scrapy if the public api wasn't available. 
-But in this case as the public API is available, ingesting data from the API provides faster processing and additional information about the projects.
+Alternatively, I could have utilized a web scraping framework like Scrapy if the public API had not been available. However, since the public API is accessible, ingesting data from it allows for faster processing and provides comprehensive information about the projects.
 
-I have applied idempotent logic, which makes sure that even if the program is executed multiple times the projects listed will match that on the website additionally if there is any update to the  project it will take the latest value for the same.
+I have implemented idempotent logic to ensure that even if the program is executed multiple times, the projects listed will match those on the website. Additionally, if there are any updates to a project, the latest values will be retrieved.
 
-Future improvements:
-If not the time constraints I would have analysed the website more, known the exact need for this activity from the stakeholders and designed the solution accordingly.
-I assume this solution to be a part of a data pipeline where it can be incorporated with Airflow for orchestration and run periodically and load data incrementally based on last fetched project_id or check for all projects if there is any update or additional projects
+#### Future Improvements
+Given more time, I would have further analyzed the website, understood the exact needs for this activity from the stakeholders, and designed the solution accordingly. I envision this solution as part of a data pipeline that could be integrated with Airflow for orchestration, allowing it to run periodically. This setup would enable incremental loading of data based on the last fetched project ID, or it could check all projects for any updates or new additions.
 
 
 ## Table of Contents
