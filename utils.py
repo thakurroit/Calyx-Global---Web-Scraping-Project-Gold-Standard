@@ -8,7 +8,8 @@ from models import Project, SustainableDevelopmentGoal, Summary, IssuanceList, R
 # Ingesting projects
 def ingest_data(page_number, session):
     url = f"https://public-api.goldstandard.org/projects?query=&page={page_number}&size=25&sortColumn=&sortDirection="
-
+    
+#Adding this header as a direct connection to API wasn't possible, the header here will emulate as API is requested from a browser
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     }
